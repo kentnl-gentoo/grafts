@@ -1,0 +1,13 @@
+rlslist format:
+
+<timestamp from pause submission> <fetch URL> <sha1>*
+
+With row 0:
+
+- No SHA1's mean "start without any parents"
+- 1-or-more SHA1's dictate a list of parents to use for that commit.
+
+With Row 1 (or greater):
+
+- The previous row is assumed to be the first parent
+- additonal SHA1's are additonal parents.
