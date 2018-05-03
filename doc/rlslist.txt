@@ -11,3 +11,12 @@ With Row 1 (or greater):
 
 - The previous row is assumed to be the first parent
 - additonal SHA1's are additonal parents.
+
+Note: timestamps are currently ignored by grafting tool, which instead
+prefers to use the archive-internal timestamp of the newest node, which is
+usually closer to the respective source commit timestamp than the PAUSE one,
+and is typically less subject to clock desynchronization issues, as the
+author producing the commit and the tarball are *usually* the same person,
+and the single machine's clock tends to get used as the authority on both the
+commit timestamp and the file-in-tarball timestamp (whereas the users machine
+and PAUSE can easily be days, months, or even years apart)
